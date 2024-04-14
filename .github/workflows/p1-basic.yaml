@@ -1,0 +1,23 @@
+name: p1 - Basic
+
+on: workflow_dispatch
+
+jobs:
+  build:
+    runs-on: self-hosted
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Build project
+        run: |
+          echo "Build Source 32"
+      - name: Run tests
+        run: |
+          echo "Run Test 32"
+  delivery:
+    needs: build
+    runs-on: self-hosted
+    steps:
+      - name: Delivery to production
+        run: |
+          echo "Delivery Image 32"
