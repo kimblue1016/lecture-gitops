@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: exam-nginx
 spec:
-  replicas: 3
+  replicas: 2
   selector:
     matchLabels:
       app: nginx
@@ -16,7 +16,7 @@ spec:
       restartPolicy: Always
       containers:
         - name: nginx
-          image: nginx
+          image: nginx:1.25.4
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 80
