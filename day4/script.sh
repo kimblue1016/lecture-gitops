@@ -20,7 +20,7 @@ kubectl diff -f script.yaml
 kubectl edit deployment/exam-nginx
 
 # 로컬 포트는 파드에서 실행 중인 컨테이너 포트로 포워딩
-kubectl port-forward pod/exam-nginx-74786647b5-pvdws 8080:8080
+kubectl port-forward pod/exam-nginx-74786647b5-pvdws 8080:80
 
 # 현재 실행중인 컨테이너 프로세스에 접속하여 로그 확인
 kubectl attach deployment/exam-nginx -c nginx
