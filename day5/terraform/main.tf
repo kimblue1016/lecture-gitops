@@ -63,22 +63,5 @@ module "eks" {
 
   enable_cluster_creator_admin_permissions = true
 
-  access_entries = {
-    eks_role = {
-      kubernetes_groups = []
-      principal_arn     = "arn:aws:iam::271251032508:user/kimblue1016"
-
-      policy_associations = {
-        eks_policy = {
-          policy_arn = "arn:aws:eks::aws:cluster-access-policy/AmazonEKSViewPolicy"
-          access_scope = {
-            namespaces = ["default"]
-            type       = "namespace"
-          }
-        }
-      }
-    }
-  }
-
   tags = local.tags
 }
