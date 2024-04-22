@@ -1,0 +1,15 @@
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+  name: demo-eksctl
+  region: ap-northeast-2
+
+managedNodeGroups:
+  - name: ng-workers
+    labels:
+      role: workers
+    instanceType: t3.small
+    desiredCapacity: 2
+    volumeSize: 20
+    privateNetworking: true
