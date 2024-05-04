@@ -23,9 +23,10 @@ kubectl get pods
 #check deploy
 kubectl exec "$(kubectl get pod -l app=ratings -o jsonpath='{.items[0].metadata.name}')" -c ratings -- curl -sS productpage:9080/productpage
 
+kubectl apply -f ./bookinfo-gateway.yaml
+
 #access gateway http://localhost/productpage
 kubectl get svc istio-ingressgateway -n istio-system
-
 
 #install observability
 kubectl apply -f ./addons
